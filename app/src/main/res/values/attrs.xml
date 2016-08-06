@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <declare-styleable name="usercontainer_layoutManager">
+        <attr name="android:orientation" tools:ignore="ResourceName"/>
+    </declare-styleable>
+</resources>

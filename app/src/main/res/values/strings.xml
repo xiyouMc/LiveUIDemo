@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LiveAppUIDemo</string>
+    <string name="live_new_message">底部有新消息</string>
+</resources>
