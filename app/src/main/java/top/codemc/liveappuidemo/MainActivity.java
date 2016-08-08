@@ -3,6 +3,8 @@ package top.codemc.liveappuidemo;
 import android.app.Activity;
 import android.os.Bundle;
 
+import top.codemc.liveappuidemo.fragment.McLiveFragment;
+
 public class MainActivity extends Activity {
 
     @Override

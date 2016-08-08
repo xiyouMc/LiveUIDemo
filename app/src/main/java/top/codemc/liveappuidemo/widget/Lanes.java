@@ -5,7 +5,7 @@ import android.graphics.Rect;
 /**
  * Created by xiyoumc on 16/8/6.
  */
-class Lanes {
+public class Lanes {
     public static final int NO_LANE = -1;
 
     private final BaseLayoutManager mLayout;

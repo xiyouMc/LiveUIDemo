@@ -3,4 +3,7 @@
     <declare-styleable name="usercontainer_layoutManager">
         <attr name="android:orientation" tools:ignore="ResourceName"/>
     </declare-styleable>
+    <declare-styleable name="usercontainer_UserContainerView">
+        <attr name="usercontainer_layoutManager" format="string"/>
+    </declare-styleable>
 </resources>
