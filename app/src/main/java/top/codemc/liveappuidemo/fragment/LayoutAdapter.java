@@ -17,9 +17,19 @@ public class LayoutAdapter extends RecyclerView.Adapter<LayoutAdapter.LiveUserLi
     private static final int COUNT = 100;
     private final Context mContext;
     private final List<UsersContainerModel> userContainerItems;
-    private int mCurrentItemId = 0;
+    private OnRecyclerViewListener mOnRecyclerViewListener;
 
-    public static class LiveUserListViewHolder extends RecyclerView.ViewHolder {
+    public interface OnRecyclerViewListener {
+        void onItemClick(int position);
+
+        boolean onItemLongClick(int position);
+    }
+
+    public void setOnRecyclerViewListener(OnRecyclerViewListener listener) {
+        this.mOnRecyclerViewListener = listener;
+    }
+
+    class LiveUserListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         public final ImageView user_portrait;
         public final ImageView img_user_type;
 
@@ -27,17 +37,32 @@ public class LayoutAdapter extends RecyclerView.Adapter<LayoutAdapter.LiveUserLi
             super(view);
             user_portrait = (ImageView) view.findViewById(R.id.user_portrait);
             img_user_type = (ImageView) view.findViewById(R.id.img_user_type);
+            user_portrait.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (null != mOnRecyclerViewListener) {
+                mOnRecyclerViewListener.onItemClick(this.getPosition());
+            }
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+            if (null != mOnRecyclerViewListener) {
+                return mOnRecyclerViewListener.onItemLongClick(this.getPosition());
+            }
+            return false;
         }
     }
 
     public LayoutAdapter(Context context) {
         mContext = context;
-        userContainerItems = new ArrayList<UsersContainerModel>(COUNT);
+        userContainerItems = new ArrayList<>(COUNT);
 
     }
 
     public void addItem(int position, UsersContainerModel entry) {
-//        final int id = mCurrentItemId++;
         userContainerItems.add(position, entry);
         notifyItemInserted(position);
     }
@@ -58,10 +83,6 @@ public class LayoutAdapter extends RecyclerView.Adapter<LayoutAdapter.LiveUserLi
         UsersContainerModel usersContainerModel = userContainerItems.get(position);
         holder.user_portrait.setImageBitmap(usersContainerModel.userPortrait);
         holder.img_user_type.setImageBitmap(usersContainerModel.userType);
-//        boolean isVertical = (mRecyclerView.getOrientation() == UserContainerLayoutManager.Orientation.VERTICAL);
-//        final View itemView = holder.itemView;
-//
-//        final int itemId = mItems.get(position);
     }
 
     @Override

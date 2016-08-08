@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="46dp"
+              android:orientation="horizontal"
+              android:id="@+id/users_container">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_gravity="bottom">
+        <LinearLayout
+                android:layout_marginLeft="7dp"
+                android:id="@+id/room_usernum_container"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+            <RelativeLayout android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+                <ImageView
+                        android:id="@+id/img_room_creator"
+                        android:src="@drawable/user_img"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"/>
+            </RelativeLayout>
+            <LinearLayout
+                    android:layout_marginLeft="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                <TextView
+                        android:id="@+id/txt_roomtype"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="直播Live"
+                        android:textSize="5pt"/>
+                <TextView
+                        android:id="@+id/txt_usernum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="999"
+                        android:textSize="5pt"
+                        android:layout_marginLeft="10dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/listview_users"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@color/transparent"
+                android:scrollbars="none"
+                android:layout_marginLeft="5dp"
+                style="@style/UserContainerView"
+        ></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+</LinearLayout>
