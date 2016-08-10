@@ -39,11 +39,7 @@
                     android:text="@string/live_new_message"
                     android:visibility="gone"/>
 
-            <EditText
-                    android:id="@+id/input_board"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-            />
+            <include layout="@layout/chat_bollow"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
