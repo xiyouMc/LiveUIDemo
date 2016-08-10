@@ -10,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,9 +17,9 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import top.codemc.liveappuidemo.R;
+import top.codemc.liveappuidemo.adapter.LayoutAdapter;
 import top.codemc.liveappuidemo.adapter.LiveChatListAdapter;
 import top.codemc.liveappuidemo.model.MessageModel;
 import top.codemc.liveappuidemo.model.UsersContainerModel;
@@ -59,24 +58,23 @@ public class McLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
         int screenWidth = metrics.widthPixels;
         int screenHigth = metrics.heightPixels;
         final EditText inputEdit = (EditText) view.findViewById(R.id.live_edit_text);
+        final ImageView send = (ImageView) view.findViewById(R.id.send);
+        inputEdit.setText("teststtt");
         ViewGroup.LayoutParams params = inputEdit.getLayoutParams();
         params.width = screenWidth - 130;
         params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
         inputEdit.setLayoutParams(params);
-        inputEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        send.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-                    String text = inputEdit.getText().toString();
-                    if (text.isEmpty()) {
-                        return false;
-                    }
-                    MessageModel messageModel = new MessageModel.Builder().userName("xiyouMc:")
-                            .content("Github:https://www.github.com/xiyouMc" + " content:" + text).build();
-                    liveChatListAdapter.addMessage(messageModel);
-                    inputEdit.setText("");
+            public void onClick(View v) {
+                String text = inputEdit.getText().toString();
+                if (text.isEmpty()) {
+                    return;
                 }
-                return false;
+                MessageModel messageModel = new MessageModel.Builder().userName("xiyouMc:")
+                        .content("Github:https://www.github.com/xiyouMc" + " content:" + text).build();
+                liveChatListAdapter.addMessage(messageModel);
+                inputEdit.setText("");
             }
         });
 

@@ -1,4 +1,4 @@
-package top.codemc.liveappuidemo.fragment;
+package top.codemc.liveappuidemo.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
