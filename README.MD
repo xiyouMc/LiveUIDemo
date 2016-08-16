@@ -13,9 +13,9 @@ Live App UI Demo
 
 ##View
 
-![Screenshot](ScreenCapture/live_home1.jpg?raw=true)
+![Screenshot](ScreenCapture/live_home1.png?raw=true)
 
-![Screenshot](ScreenCapture/live_home.jpg?raw=true)
+![Screenshot](ScreenCapture/live_home.png?raw=true)
 
 ## Contact me
 
