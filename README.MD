@@ -13,5 +13,5 @@ Live App UI Demo
 
 ##View
 
-![Screenshot](ScreenCapture/home.png?raw=true)
+![Screenshot](ScreenCapture/home.jpg?raw=true)
 
