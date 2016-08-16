@@ -7,11 +7,34 @@ Live App UI Demo
 
 
 ```
-1. YKLiveFragment: Add this Fragment to your Activity layout.
-2. You Need Change The function of onTouch() And configUserContainer()
+1. Layout: top.codemc.liveappuidemo.fragment.YKLiveFragment
+2. Click: OnTouch() And configUserContainer()
 ```
 
 ##View
 
-![Screenshot](ScreenCapture/home.jpg?raw=true =200x100)
+![Screenshot](ScreenCapture/live_home1.jpg?raw=true)
 
+![Screenshot](ScreenCapture/live_home.jpg?raw=true)
+
+## Contact me
+
+Any further question?
+
+[Email](mailto:tmac694449212@gmail.com) me please!
+
+## License
+
+        Copyright 2016 xiyouMc
+
+        Licensed under the Apache License, Version 2.0 (the "License");
+        you may not use this file except in compliance with the License.
+        You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an "AS IS" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.
