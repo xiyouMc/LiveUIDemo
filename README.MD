@@ -13,7 +13,11 @@ Live App UI Demo
 
 ##View
 
+> Home UI
+
 ![Screenshot](ScreenCapture/live_home1.png?raw=true)
+
+> Input UI
 
 ![Screenshot](ScreenCapture/live_home.png?raw=true)
 
