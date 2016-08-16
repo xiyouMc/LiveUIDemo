@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.WindowManager;
 
-import top.codemc.liveappuidemo.fragment.McLiveFragment;
-
 public class MainActivity extends Activity {
 
     @Override

@@ -29,7 +29,7 @@ import top.codemc.liveappuidemo.view.RvSpaceItemDecoration;
 /**
  * Created by xiyoumc on 16/8/5.
  */
-public class McLiveFragment extends Fragment implements LayoutAdapter.OnRecyclerViewListener, View.OnTouchListener {
+public class FBLiveFragment extends Fragment implements LayoutAdapter.OnRecyclerViewListener, View.OnTouchListener {
 
     private static final String TAG = "McLiveFragment";
 
@@ -47,12 +47,12 @@ public class McLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
         super.onViewCreated(view, savedInstanceState);
         final Activity activity = getActivity();
         RecyclerView usersView = (RecyclerView) view.findViewById(R.id.listview_users);
-        like = (ImageView) view.findViewById(R.id.like_pop);
-        like.setOnTouchListener(this);
         usersView.setHasFixedSize(true);
         usersView.setLongClickable(false);
         configRecyclerView(activity, usersView);
 
+        like = (ImageView) view.findViewById(R.id.like_pop);
+        like.setOnTouchListener(this);
         DisplayMetrics metrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
         int screenWidth = metrics.widthPixels;

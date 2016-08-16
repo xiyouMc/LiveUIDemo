@@ -10,5 +10,5 @@
     <fragment
             android:id="@+id/live_chat_fragment"
             android:layout_width="match_parent" android:layout_height="match_parent"
-            android:name="top.codemc.liveappuidemo.fragment.McLiveFragment"/>
+            android:name="top.codemc.liveappuidemo.fragment.YKLiveFragment"/>
 </RelativeLayout>
