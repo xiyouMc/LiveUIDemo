@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/transparent"
+        android:background="@drawable/zhubo"
         android:orientation="vertical"
         android:id="@+id/root_view">
     <LinearLayout android:id="@+id/live_top_ll"
@@ -19,21 +20,23 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbars="none"
-            android:layout_marginBottom="38dip">
+    >
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_gravity="bottom">
+                android:layout_gravity="bottom"
+        >
             <ListView
                     android:id="@+id/live_chatlist"
-                    android:layout_width="240dp"
+                    android:layout_width="300dp"
                     android:layout_height="200dp"
                     android:divider="@null"
                     android:listSelector="@android:color/transparent"
                     android:scrollbars="none"
                     android:transcriptMode="alwaysScroll"
-            />
+                    android:layout_marginBottom="48dip"
+                    android:dividerHeight="1dp"/>
             <TextView
                     android:id="@+id/new_message"
                     android:layout_width="wrap_content"
@@ -48,15 +51,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:visibility="gone">
+                    android:visibility="gone"
+                    android:background="@color/white"
+                    tools:visiblity="visible"
+            >
                 <EditText android:id="@+id/live_msg"
-                          android:layout_width="match_parent" android:layout_height="match_parent"
-                          android:hint="我想说"/>
+                          android:layout_width="match_parent"
+                          android:layout_height="50dip"
+                          android:hint="我想说"
+                          android:background="@color/transparent"
+                          android:gravity="center_vertical"
+                          android:paddingStart="10dip"/>
                 <Button android:id="@+id/live_send"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="发送"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white"
+                        android:background="@color/vs_color_ffffee00"
+                        android:textSize="8pt"/>
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
@@ -64,7 +77,8 @@
             android:id="@+id/live_bollow_ln"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+    >
         <include layout="@layout/live_bollow"
         />
     </LinearLayout>

@@ -48,13 +48,15 @@ public class LiveChatListAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.text_message_item, null);
             holder = new ViewHolder();
-            holder.username = (TextView)convertView.findViewById(R.id.rc_username);
-            holder.content = (TextView)convertView.findViewById(R.id.rc_content);
-            holder.username.setText(data.userName);
-            holder.content.setText(data.content);
+            holder.username = (TextView) convertView.findViewById(R.id.rc_username);
+            holder.content = (TextView) convertView.findViewById(R.id.rc_content);
             convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
+        holder.username.setText(data.userName);
+        holder.content.setText(data.content);
         return convertView;
     }
 
@@ -62,5 +64,4 @@ public class LiveChatListAdapter extends BaseAdapter {
         TextView username;
         TextView content;
     }
-
 }

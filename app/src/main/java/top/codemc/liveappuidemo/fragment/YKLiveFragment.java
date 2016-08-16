@@ -25,6 +25,7 @@ import android.widget.RelativeLayout;
 import top.codemc.liveappuidemo.R;
 import top.codemc.liveappuidemo.adapter.LayoutAdapter;
 import top.codemc.liveappuidemo.adapter.LiveChatListAdapter;
+import top.codemc.liveappuidemo.model.MessageModel;
 import top.codemc.liveappuidemo.model.UsersContainerModel;
 import top.codemc.liveappuidemo.view.RvSpaceItemDecoration;
 
@@ -58,37 +59,10 @@ public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
     public void onViewCreated(View rootView, Bundle savedInstanceState) {
         super.onViewCreated(rootView, savedInstanceState);
         final Activity activity = getActivity();
-
-        initView(rootView);
-        initViewData();
-
         screenHeight = activity.getWindowManager().getDefaultDisplay().getHeight();
         keyHeight = screenHeight / 3;
-
-
-//        DisplayMetrics metrics = new DisplayMetrics();
-//        activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
-//        int screenWidth = metrics.widthPixels;
-//        int screenHigth = metrics.heightPixels;
-//        inputEdit.setText("teststtt");
-//        ViewGroup.LayoutParams params = inputEdit.getLayoutParams();
-//        params.width = screenWidth - 130;
-//        params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-//        inputEdit.setLayoutParams(params);
-//        send.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String text = inputEdit.getText().toString();
-//                if (text.isEmpty()) {
-//                    return;
-//                }
-//                MessageModel messageModel = new MessageModel.Builder().userName("xiyouMc:")
-//                        .content("Github:https://www.github.com/xiyouMc" + " content:" + text).build();
-//                liveChatListAdapter.addMessage(messageModel);
-//                inputEdit.setText("");
-//            }
-//        });
-
+        initView(rootView);
+        initViewData();
     }
 
     private void initView(View rootView) {
@@ -179,6 +153,15 @@ public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
                 return true;
             case R.id.live_send:
                 msg_edit_text.requestFocus();
+                String text = msg_edit_text.getText().toString();
+                if (text.isEmpty()) {
+                    return false;
+                }
+                MessageModel messageModel = new MessageModel.Builder().userName("xiyouMc:")
+                        .content("Github:https://www.github.com/xiyouMc" + " content:" + text).build();
+                liveChatListAdapter.addMessage(messageModel);
+                liveChatListAdapter.notifyDataSetChanged();
+                msg_edit_text.setText("");
                 return true;
         }
         return false;
