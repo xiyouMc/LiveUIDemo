@@ -5,24 +5,29 @@
               android:layout_height="match_parent"
               android:layout_marginBottom="9dip">
     <ImageView android:id="@+id/live_send_msg"
-               android:layout_width="28dip" android:layout_height="28dip"
+               android:layout_width="@dimen/below_btn"
+               android:layout_height="@dimen/below_btn"
                android:src="@drawable/live_send_msg"
-               android:layout_marginLeft="10dip"/>
+               android:layout_marginStart="10dip"/>
     <ImageView android:id="@+id/live_share"
-               android:layout_width="28dip" android:layout_height="28dip"
+               android:layout_width="@dimen/below_btn"
+               android:layout_height="@dimen/below_btn"
                android:src="@drawable/live_share"
-               android:layout_marginLeft="10dip"/>
-    <ImageView android:id="@+id/live_send_gift" android:layout_width="28dip"
-               android:layout_height="28dip"
+               android:layout_marginStart="10dip"/>
+    <ImageView android:id="@+id/live_send_gift"
+               android:layout_width="@dimen/below_btn"
+               android:layout_height="@dimen/below_btn"
                android:src="@drawable/live_send_gift"
-               android:layout_marginLeft="10dip"/>
-    <RelativeLayout android:layout_width="match_parent" android:layout_height="28dip"
-                    android:layout_marginRight="10dip">
+               android:layout_marginStart="10dip"/>
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="@dimen/below_btn"
+                    android:layout_marginEnd="10dip">
         <LinearLayout android:layout_width="wrap_content"
                       android:layout_height="match_parent"
                       android:orientation="horizontal"
-                      android:layout_alignParentRight="true">
-            <TextView android:id="@+id/live_like_num" android:layout_width="wrap_content"
+                      android:layout_alignParentEnd="true">
+            <TextView android:id="@+id/live_like_num"
+                      android:layout_width="wrap_content"
                       android:layout_height="match_parent"
                       android:gravity="center"
                       android:text="1111"/>
@@ -30,12 +35,14 @@
                     android:id="@+id/live_like"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="3dip">
-                <ImageView android:layout_width="28dip" android:layout_height="28dip"
+                    android:layout_marginStart="3dip">
+                <ImageView android:layout_width="@dimen/below_btn"
+                           android:layout_height="@dimen/below_btn"
                            android:src="@drawable/live_send_heart"
                 />
-                <ImageView android:layout_width="15dip" android:layout_height="15dip"
-                           android:src="@drawable/u36"
+                <ImageView android:layout_width="15dip"
+                           android:layout_height="15dip"
+                           android:src="@drawable/live_user1"
                            android:layout_gravity="center"/>
             </FrameLayout>
 

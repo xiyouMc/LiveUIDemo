@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="test_users">
+        <item>@drawable/live_user1</item>
+        <item>@drawable/live_user2</item>
+        <item>@drawable/live_user3</item>
+        <item>@drawable/live_user4</item>
+        <item>@drawable/live_user5</item>
+        <item>@drawable/live_user6</item>
+        <item>@drawable/live_user7</item>
+        <item>@drawable/live_user8</item>
+        <item>@drawable/live_user9</item>
+        <item>@drawable/live_user10</item>
+        <item>@drawable/live_user11</item>
+        <item>@drawable/live_user12</item>
+        <item>@drawable/live_user13</item>
+        <item>@drawable/live_user14</item>
+        <item>@drawable/live_user15</item>
+        <item>@drawable/live_user16</item>
+        <item>@drawable/live_user17</item>
+    </array>
+</resources>
