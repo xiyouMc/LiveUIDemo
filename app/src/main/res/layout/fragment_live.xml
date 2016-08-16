@@ -16,6 +16,7 @@
     </LinearLayout>
 
     <ScrollView
+            android:id="@+id/center_sv"
             android:layout_below="@id/live_top_ll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

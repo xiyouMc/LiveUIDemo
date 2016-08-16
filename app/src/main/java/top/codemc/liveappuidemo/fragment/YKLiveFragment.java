@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 
 import top.codemc.liveappuidemo.R;
 import top.codemc.liveappuidemo.adapter.LayoutAdapter;
@@ -32,8 +33,8 @@ import top.codemc.liveappuidemo.view.RvSpaceItemDecoration;
 /**
  * Created by xiyoumc on 16/8/5.
  */
-public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecyclerViewListener, View.OnTouchListener,
-        View.OnLayoutChangeListener {
+public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecyclerViewListener, View.OnClickListener,
+        View.OnLayoutChangeListener, View.OnTouchListener {
 
     private static final String TAG = "McLiveFragment";
 
@@ -41,14 +42,13 @@ public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
     private ListView liveChatListView;
     private LiveChatListAdapter liveChatListAdapter;
     private RelativeLayout below_msg_rl;
-    private LinearLayout live_below_ln;
+    private LinearLayout live_below_ln,room_usernum_container;
     private EditText msg_edit_text;
-    private Button msg_send_bt;
-    private int screenHeight = 0;
     private int keyHeight = 0;
     private RecyclerView usersView;
     private LayoutAdapter userContainerAdapter;
     private ImageView img_room_creator;
+    private ScrollView center_sv;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -59,7 +59,7 @@ public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
     public void onViewCreated(View rootView, Bundle savedInstanceState) {
         super.onViewCreated(rootView, savedInstanceState);
         final Activity activity = getActivity();
-        screenHeight = activity.getWindowManager().getDefaultDisplay().getHeight();
+        int screenHeight = activity.getWindowManager().getDefaultDisplay().getHeight();
         keyHeight = screenHeight / 3;
         initView(rootView);
         initViewData();
@@ -68,8 +68,11 @@ public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
     private void initView(View rootView) {
         root_view = (RelativeLayout) rootView.findViewById(R.id.root_view);
 
-        img_room_creator = (ImageView) rootView.findViewById(R.id.img_room_creator);
         //top view
+        room_usernum_container = (LinearLayout)rootView.findViewById(R.id.room_usernum_container);
+        img_room_creator = (ImageView) rootView.findViewById(R.id.img_room_creator);
+        center_sv = (ScrollView) rootView.findViewById(R.id.center_sv);
+        center_sv.setOnTouchListener(this);
         usersView = (RecyclerView) rootView.findViewById(R.id.listview_users);
         //msg view
         liveChatListView = (ListView) rootView.findViewById(R.id.live_chatlist);
@@ -80,11 +83,11 @@ public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
         ImageView live_share = (ImageView) rootView.findViewById(R.id.live_share);
         below_msg_rl = (RelativeLayout) rootView.findViewById(R.id.send_rl);
         msg_edit_text = (EditText) rootView.findViewById(R.id.live_msg);
-        msg_send_bt = (Button) rootView.findViewById(R.id.live_send);
-        live_send_msg.setOnTouchListener(this);
-        live_send_gift.setOnTouchListener(this);
-        live_share.setOnTouchListener(this);
-        msg_send_bt.setOnTouchListener(this);
+        Button msg_send_bt = (Button) rootView.findViewById(R.id.live_send);
+        live_send_msg.setOnClickListener(this);
+        live_send_gift.setOnClickListener(this);
+        live_share.setOnClickListener(this);
+        msg_send_bt.setOnClickListener(this);
     }
 
     private void initViewData() {
@@ -134,9 +137,8 @@ public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
         return false;
     }
 
-
     @Override
-    public boolean onTouch(View v, MotionEvent event) {
+    public void onClick(View v) {
         int id = v.getId();
 
         switch (id) {
@@ -146,25 +148,48 @@ public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
                 msg_edit_text.requestFocus();
                 final InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
-                return true;
+                return;
             case R.id.live_send_gift:
-                return true;
+                return;
             case R.id.live_share:
-                return true;
+                return;
             case R.id.live_send:
                 msg_edit_text.requestFocus();
                 String text = msg_edit_text.getText().toString();
                 if (text.isEmpty()) {
-                    return false;
+                    return;
                 }
                 MessageModel messageModel = new MessageModel.Builder().userName("xiyouMc:")
                         .content("Github:https://www.github.com/xiyouMc" + " content:" + text).build();
                 liveChatListAdapter.addMessage(messageModel);
                 liveChatListAdapter.notifyDataSetChanged();
                 msg_edit_text.setText("");
-                return true;
+                return;
+        }
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        int id = v.getId();
+        switch (id) {
+            case R.id.center_sv:
+                if (MotionEvent.ACTION_UP == event.getAction()) {
+                    controlViewVisiable();
+                    return true;
+                }
+                return false;
         }
         return false;
+    }
+
+    private synchronized void controlViewVisiable() {
+        int visible = liveChatListView.getVisibility() == View.INVISIBLE
+                ? View.VISIBLE : View.INVISIBLE;
+        Log.d(TAG, "visible" + visible);
+        liveChatListView.setVisibility(visible);
+        room_usernum_container.setVisibility(visible);
+        usersView.setVisibility(visible);
+        live_below_ln.setVisibility(visible);
     }
 
     @Override
