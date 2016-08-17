@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView android:id="@+id/create_live_bg"
+               android:layout_width="match_parent" android:layout_height="match_parent"
+               android:src="@drawable/create_live_bg" android:scaleType="fitXY"/>
+    <RelativeLayout
+            android:id="@+id/create_live_top_ll"
+            android:layout_width="match_parent" android:layout_height="58dip"
+            android:gravity="center_vertical">
+        <LinearLayout android:layout_width="120dip" android:layout_height="match_parent"
+                      android:orientation="horizontal"
+                      android:gravity="center">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:src="@drawable/live_location"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="杭州市"
+                      android:layout_marginStart="5dip"
+                      android:textColor="@color/white"
+                      android:id="@+id/switch_position"/>
+        </LinearLayout>
+        <ImageView android:layout_width="30dip" android:layout_height="match_parent"
+                   android:layout_gravity="center"
+                   android:src="@drawable/live_close"
+                   android:layout_marginStart="10dip"
+                   android:layout_marginEnd="10dip"
+                   android:layout_marginRight="10dip"
+                   android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+    <EditText android:id="@+id/edit_roomname"
+              android:layout_width="match_parent" android:layout_height="80dip"
+              android:layout_marginTop="100dp"
+              android:layout_below="@id/create_live_top_ll"
+              android:background="@color/transparent"
+              android:gravity="center"
+              android:text="给直播写个标题吧"
+              android:textColor="@color/white"/>
+    <LinearLayout android:id="@+id/layout_topic"
+                  android:layout_marginTop="40dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="30dip"
+                  android:orientation="horizontal"
+                  android:layout_below="@id/edit_roomname"
+                  android:gravity="center">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="#添加话题" android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/share_plat_container"
+                  android:layout_width="match_parent"
+                  android:layout_height="40dip"
+                  android:orientation="horizontal"
+                  android:layout_below="@id/layout_topic"
+                  android:gravity="center">
+        <ImageView android:id="@+id/wechat"
+                   android:layout_width="23dip" android:layout_height="23dip"
+                   android:src="@drawable/wechat"/>
+        <ImageView android:id="@+id/qq"
+                   android:layout_width="23dip" android:layout_height="23dip"
+                   android:src="@drawable/qq"
+                   android:layout_marginStart="40dip"/>
+        <ImageView android:id="@+id/sina"
+                   android:layout_width="23dip" android:layout_height="23dip"
+                   android:src="@drawable/sina"
+                   android:layout_marginStart="40dip"/>
+    </LinearLayout>
+
+    <Button android:layout_width="match_parent" android:layout_height="35dip"
+            android:text="开始直播"
+            android:textColor="@color/white"
+            android:background="@color/transparent"
+            android:layout_below="@id/share_plat_container"/>
+</RelativeLayout>
