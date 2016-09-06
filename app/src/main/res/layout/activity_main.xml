@@ -17,4 +17,8 @@
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="观看直播"
             android:layout_below="@id/create_live_bt"/>
+    <Button android:id="@+id/show_userinfo"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="展示个人信息"
+            android:layout_below="@id/play_live_bt"/>
 </RelativeLayout>

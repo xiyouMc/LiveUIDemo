@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/transparent"
+              android:gravity="center">
+
+    <RelativeLayout android:layout_width="250dp" android:layout_height="378dp"
+                    android:background="@drawable/rect_user_card">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:layout_marginLeft="14dp"
+                      android:layout_marginTop="14dp"
+                      android:gravity="center_vertical">
+            <ImageView android:layout_width="15dp" android:layout_height="15dp"
+                       android:src="@drawable/box_icon_jubao_nrm"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="举报"
+                      android:textSize="14sp"
+                      android:layout_marginLeft="10dp"
+                      android:textColor="#999999"/>
+
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="44dp"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+            <top.codemc.liveappuidemo.view.CircleImageView android:layout_width="66dp"
+                                                           android:layout_height="66dp"
+                                                           android:src="@drawable/user_img"
+                                                           android:layout_gravity="center_horizontal"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="隔壁大小姐"
+                      android:textSize="14sp"
+                      android:layout_marginTop="12dp"
+                      android:textColor="#000413"
+            />
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:orientation="horizontal"
+                          android:layout_marginTop="14dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="ID 12345678"
+                          android:textSize="12sp"
+                          android:textColor="#000413"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="杭州市"
+                          android:layout_marginLeft="28dp"
+                          android:textSize="12sp"
+                          android:textColor="#000413"/>
+            </LinearLayout>
+            <TextView android:layout_width="200dp" android:layout_height="wrap_content"
+                      android:text="我就是风流倜傥、人见人爱、花见花开的隔壁老王的大小姐"
+                      android:textSize="12sp"
+                      android:gravity="center"
+                      android:layout_marginTop="14dip"
+                      android:textColor="#999999"
+            />
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:layout_marginTop="13dp"
+            >
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:gravity="center">
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="粉丝"
+                              android:textSize="14sp"
+                              android:textColor="#999999"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="19204"
+                              android:textSize="16sp"
+                              android:textColor="#000413"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:gravity="center"
+                              android:layout_marginLeft="85dp">
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="星星"
+                              android:textSize="14sp"
+                              android:textColor="#999999"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="1.2万"
+                              android:textSize="16sp"
+                              android:textColor="#000413"/>
+                </LinearLayout>
+            </LinearLayout>
+            <Button android:layout_width="match_parent" android:layout_height="43dp"
+                    android:background="@drawable/focus_on_live"
+                    android:layout_marginTop="13dp"
+                    android:text="+关注"
+                    android:textSize="16sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="去主页"
+                      android:textSize="16sp"
+                      android:layout_marginTop="23dip"/>
+        </LinearLayout>
+
+        <ImageView android:layout_width="15dp"
+                   android:layout_height="15dp"
+                   android:src="@drawable/box_icon_close_nrm"
+                   android:layout_alignParentRight="true"
+                   android:layout_marginTop="14dp"
+                   android:layout_marginRight="14dp"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
