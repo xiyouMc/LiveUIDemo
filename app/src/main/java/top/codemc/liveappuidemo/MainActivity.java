@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    private Button create_live_bt, play_live_bt, show_userinfo, gird_view_gift;
+    private Button create_live_bt, play_live_bt, show_userinfo, gird_view_gift, live_over;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
         create_live_bt.setOnClickListener(this);
         play_live_bt.setOnClickListener(this);
         show_userinfo.setOnClickListener(this);
+        live_over = (Button) findViewById(R.id.live_over);
+        live_over.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CloseLiveActivity.class);
+                startActivity(intent);
+            }
+        });
 //        overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
     }
 

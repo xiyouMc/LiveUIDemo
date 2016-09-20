@@ -71,10 +71,11 @@
                    android:layout_marginStart="40dip"/>
     </LinearLayout>
 
-    <Button android:layout_width="match_parent" android:layout_height="35dip"
+    <Button android:layout_width="350dp" android:layout_height="50dip"
             android:id="@+id/create_live_bt"
             android:text="开始直播"
             android:textColor="@color/white"
             android:background="@color/transparent"
-            android:layout_below="@id/share_plat_container"/>
+            android:layout_below="@id/share_plat_container"
+            android:layout_centerHorizontal="true"/>
 </RelativeLayout>

@@ -26,4 +26,8 @@
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="打开礼物列表"
             android:layout_below="@id/show_userinfo"/>
+    <Button android:id="@+id/live_over"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="直播结束"
+            android:layout_below="@id/gird_view_gift"/>
 </RelativeLayout>

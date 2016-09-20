@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:background="@drawable/create_live_bg">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="直播已结束"
+              android:textSize="30sp"
+              android:layout_marginTop="100dp"
+              android:textColor="#ff6333"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="时长较短的直播不予保存"
+              android:textSize="14sp"
+              android:layout_marginTop="10dp"/>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:gravity="center"
+                  android:layout_marginTop="80dp">
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:gravity="center">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="12315"
+                      android:textSize="24sp"
+                      android:textColor="#ff6333"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="看过人数"
+                      android:textSize="14sp"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_marginLeft="110dp"
+                      android:gravity="center">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="1024"
+                      android:textSize="24sp"
+                      android:textColor="#76EEC6"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="收到糖果树"
+                      android:textSize="14sp"
+            />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="分享到"
+              android:layout_marginTop="100dp"
+              android:textColor="@color/white"
+              android:textSize="12sp"/>
+
+    <LinearLayout android:id="@+id/share_plat_container"
+                  android:layout_width="match_parent"
+                  android:layout_height="40dip"
+                  android:orientation="horizontal"
+                  android:gravity="center"
+                  android:layout_marginTop="30dp">
+        <ImageView android:id="@+id/wechat"
+                   android:layout_width="23dip" android:layout_height="23dip"
+                   android:src="@drawable/wechat"/>
+        <ImageView android:id="@+id/qq"
+                   android:layout_width="23dip" android:layout_height="23dip"
+                   android:src="@drawable/qq"
+                   android:layout_marginStart="40dip"/>
+        <ImageView android:id="@+id/sina"
+                   android:layout_width="23dip" android:layout_height="23dip"
+                   android:src="@drawable/sina"
+                   android:layout_marginStart="40dip"/>
+    </LinearLayout>
+    <Button android:layout_width="310dp" android:layout_height="50dip"
+            android:id="@+id/create_live_bt"
+            android:text="返回首页"
+            android:textColor="#ff6333"
+            android:background="@drawable/border"
+            android:layout_below="@id/share_plat_container"
+            android:textSize="18sp"
+    />
+</LinearLayout>

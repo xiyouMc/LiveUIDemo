@@ -44,7 +44,6 @@ public class ArrayListFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position,
                                     long id) {
-                Toast.makeText(getActivity(), GirdViewActivity.CHESSES.get(position), Toast.LENGTH_LONG).show();
             }
         });
 

@@ -27,6 +27,10 @@
                 android:name=".GirdViewActivity"
                 android:label="@string/title_activity_gird_view">
         </activity>
+        <activity
+                android:name=".CloseLiveActivity"
+                android:label="@string/title_activity_close_live">
+        </activity>
     </application>
 
 </manifest>
