@@ -14,15 +14,18 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-                android:name=".CreateLiveActivity"
-                />
+        <activity android:name=".CreateLiveActivity"/>
         <activity
                 android:name=".PlayLiveActivity"
                 android:windowSoftInputMode="adjustPan">
         </activity>
-        <activity android:name=".ShowUserInfo"
-                  android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        <activity
+                android:name=".ShowUserInfo"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+        <activity
+                android:name=".GirdViewActivity"
+                android:label="@string/title_activity_gird_view">
         </activity>
     </application>
 

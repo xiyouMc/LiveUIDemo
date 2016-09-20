@@ -34,7 +34,8 @@
             <top.codemc.liveappuidemo.view.CircleImageView android:layout_width="66dp"
                                                            android:layout_height="66dp"
                                                            android:src="@drawable/user_img"
-                                                           android:layout_gravity="center_horizontal"/>
+                                                           android:layout_gravity="center_horizontal"
+                                                           android:background="#FFFFFF"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:text="隔壁大小姐"
                       android:textSize="14sp"

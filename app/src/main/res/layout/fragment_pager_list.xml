@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/transparent"
+              android:orientation="vertical">
+
+    <GridView
+            android:id="@+id/myList"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:columnWidth="100dip"
+            android:drawSelectorOnTop="false"
+            android:horizontalSpacing="1.0px"
+            android:numColumns="4"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="1.0px"
+            android:listSelector="@null"
+            android:soundEffectsEnabled="true"
+            android:smoothScrollbar="true"
+    />
+
+</LinearLayout>
