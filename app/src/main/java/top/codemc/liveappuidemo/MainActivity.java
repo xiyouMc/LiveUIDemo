@@ -4,16 +4,20 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    private Button create_live_bt, play_live_bt, show_userinfo, gird_view_gift, live_over;
+    private Button create_live_bt, play_live_bt, show_userinfo, gird_view_gift, live_over,viewpage_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE |
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         setContentView(R.layout.activity_main);
+
         create_live_bt = (Button) findViewById(R.id.create_live_bt);
         play_live_bt = (Button) findViewById(R.id.play_live_bt);
         show_userinfo = (Button) findViewById(R.id.show_userinfo);
@@ -33,6 +37,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CloseLiveActivity.class);
+                startActivity(intent);
+            }
+        });
+        viewpage_btn = (Button)findViewById(R.id.viewpage_btn);
+        viewpage_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ViewPageActivity.class);
                 startActivity(intent);
             }
         });

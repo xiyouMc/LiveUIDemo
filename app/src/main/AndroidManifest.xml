@@ -31,6 +31,10 @@
                 android:name=".CloseLiveActivity"
                 android:label="@string/title_activity_close_live">
         </activity>
+        <activity
+                android:name=".ViewPageActivity"
+                android:label="@string/title_activity_view_page">
+        </activity>
     </application>
 
 </manifest>

@@ -30,4 +30,19 @@
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="直播结束"
             android:layout_below="@id/gird_view_gift"/>
+    <EditText android:layout_width="match_parent" android:layout_height="100dp"
+    android:layout_below="@id/live_over"
+    android:hint="aaa"
+             />
+    <Button android:id="@+id/viewpage_btn"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="ViewPage"
+            android:layout_below="@id/live_over"/>
+
+    <top.codemc.liveappuidemo.view.likeanimationlayout.LikeAnimationLayout
+    android:id="@+id/like"
+    android:layout_width = "match_parent"
+    android:layout_height = "match_parent">
+
+    </top.codemc.liveappuidemo.view.likeanimationlayout.LikeAnimationLayout>
 </RelativeLayout>
