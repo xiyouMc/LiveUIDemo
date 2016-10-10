@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingLeft="10dp">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:id="@+id/gift_linear1"
+    >
+        <RelativeLayout android:layout_width="270dp"
+                        android:layout_height="match_parent">
+            <LinearLayout android:layout_width="270dp"
+                          android:background="@drawable/user_linear"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:layout_marginTop="10dp">
+                <top.codemc.liveappuidemo.view.CircleImageView android:layout_width="47dp"
+                                                               android:layout_height="47dp"
+                                                               android:src="@drawable/user_img"
+                                                               android:layout_gravity="center_horizontal"
+                                                               android:background="#00000000"
+                                                               android:id="@+id/gift_user_id1"/>
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginLeft="10dp">
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:id="@+id/gift_user_name1"
+                              android:text="马超"
+                              android:textSize="20sp"
+                              android:textColor="@color/white"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="送了一个"
+                              android:textColor="@color/material_blue_grey_800"
+                              android:textSize="15sp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:layout_width="55dp" android:layout_height="55dp"
+                       android:src="@drawable/liva_user12"
+                       android:layout_alignParentRight="true"
+                       android:id="@+id/gift_png1"
+                       android:layout_marginRight="7dp"
+                       android:visibility="invisible"
+            />
+        </RelativeLayout>
+        <ImageView android:layout_width="wrap_content" android:layout_height="55dp"
+                   android:src="@drawable/liva_user12"
+                   android:id="@+id/gift_num1"/>
+    </LinearLayout>
+
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="10dp"
+                  android:id="@+id/gift_linear2"
+    >
+        <RelativeLayout android:layout_width="270dp"
+                        android:layout_height="match_parent">
+            <LinearLayout android:layout_width="270dp"
+                          android:background="@drawable/user_linear"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:layout_marginTop="10dp">
+                <top.codemc.liveappuidemo.view.CircleImageView android:layout_width="47dp"
+                                                               android:layout_height="47dp"
+                                                               android:src="@drawable/user_img"
+                                                               android:layout_gravity="center_horizontal"
+                                                               android:background="#00000000"
+                                                               android:id="@+id/gift_user_id2"/>
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginLeft="10dp">
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:id="@+id/gift_user_name2"
+                              android:text="马超"
+                              android:textSize="20sp"
+                              android:textColor="@color/white"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="送了一个"
+                              android:textColor="@color/material_blue_grey_800"
+                              android:textSize="15sp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:layout_width="55dp" android:layout_height="55dp"
+                       android:src="@drawable/liva_user12"
+                       android:layout_alignParentRight="true"
+                       android:id="@+id/gift_png2"
+                       android:layout_marginRight="7dp"
+            />
+        </RelativeLayout>
+        <ImageView android:layout_width="wrap_content" android:layout_height="55dp"
+                   android:src="@drawable/liva_user12"
+                   android:id="@+id/gift_num2"/>
+    </LinearLayout>
+</LinearLayout>

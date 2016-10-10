@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    private Button create_live_bt, play_live_bt, show_userinfo, gird_view_gift, live_over,viewpage_btn;
+    private Button create_live_bt, play_live_bt, show_userinfo, gird_view_gift, live_over, viewpage_btn, live_anim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +40,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(intent);
             }
         });
-        viewpage_btn = (Button)findViewById(R.id.viewpage_btn);
+        viewpage_btn = (Button) findViewById(R.id.viewpage_btn);
         viewpage_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ViewPageActivity.class);
+                Intent intent = new Intent(MainActivity.this, ViewPageActivity.class);
+                startActivity(intent);
+            }
+        });
+        live_anim = (Button) findViewById(R.id.live_anim);
+        live_anim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, com.example.animation.MainActivity.class);
                 startActivity(intent);
             }
         });

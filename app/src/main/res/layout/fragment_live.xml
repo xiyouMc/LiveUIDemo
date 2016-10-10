@@ -28,6 +28,8 @@
                 android:orientation="vertical"
                 android:layout_gravity="bottom"
         >
+            <include layout="@layout/gift_show_view"
+            />
             <ListView
                     android:id="@+id/live_chatlist"
                     android:layout_width="300dp"

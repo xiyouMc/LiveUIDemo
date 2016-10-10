@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.example.animation.MainActivity">
+
+    <Button
+            android:id="@+id/scale"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="ScaleAnimation(缩放动画)"/>
+
+    <Button
+            android:id="@+id/aloha"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/button1"
+            android:layout_below="@+id/button1"
+            android:text="AlphaAnimation(透明度动画)"/>
+
+    <Button
+            android:id="@+id/rotate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/button2"
+            android:layout_below="@+id/button2"
+            android:text="RotateAnimation(旋转动画)"/>
+
+    <Button
+            android:id="@+id/trans"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/button3"
+            android:layout_below="@+id/button3"
+            android:text="TranslateaAnimation(位移动画)"/>
+
+    <Button
+            android:id="@+id/con1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="续播1"/>
+
+    <Button
+            android:id="@+id/con2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button4"
+            android:layout_toRightOf="@+id/button7"
+            android:text="续播2"/>
+
+    <Button
+            android:id="@+id/flash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button5"
+            android:layout_alignBottom="@+id/button5"
+            android:layout_toRightOf="@+id/button5"
+            android:text="闪烁"/>
+
+    <Button
+            android:id="@+id/shake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button4"
+            android:layout_toRightOf="@+id/button6"
+            android:text="抖动"/>
+
+    <Button
+            android:id="@+id/change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/button7"
+            android:layout_below="@+id/button5"
+            android:text="切换动画"/>
+
+    <Button
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button7"
+            android:layout_centerHorizontal="true"
+            android:text="布局动画"/>
+
+    <Button
+            android:id="@+id/frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/button7"
+            android:text="逐帧动画"/>
+
+    <ImageView android:id="@+id/image"
+               android:layout_width="100dp" android:layout_height="100dp"
+               android:src="@drawable/liva_user12"
+               android:layout_centerInParent="true"/>
+</LinearLayout>

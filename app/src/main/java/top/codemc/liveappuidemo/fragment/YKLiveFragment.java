@@ -1,5 +1,11 @@
 package top.codemc.liveappuidemo.fragment;
 
+import com.facebook.rebound.BaseSpringSystem;
+import com.facebook.rebound.SimpleSpringListener;
+import com.facebook.rebound.Spring;
+import com.facebook.rebound.SpringConfig;
+import com.facebook.rebound.SpringSystem;
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
@@ -7,6 +13,8 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -14,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,18 +46,21 @@ public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
         View.OnLayoutChangeListener, View.OnTouchListener {
 
     private static final String TAG = "McLiveFragment";
+    private final BaseSpringSystem mSpringSystem = SpringSystem.create();
+    private Spring mScaleSpring;
 
     private RelativeLayout root_view;
     private ListView liveChatListView;
     private LiveChatListAdapter liveChatListAdapter;
     private RelativeLayout below_msg_rl;
-    private LinearLayout live_below_ln,room_usernum_container;
+    private LinearLayout live_below_ln, room_usernum_container;
     private EditText msg_edit_text;
     private int keyHeight = 0;
     private RecyclerView usersView;
     private LayoutAdapter userContainerAdapter;
     private ImageView img_room_creator;
     private ScrollView center_sv;
+    private LinearLayout giftLinear1, giftLinear2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -69,7 +81,7 @@ public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
         root_view = (RelativeLayout) rootView.findViewById(R.id.root_view);
 
         //top view
-        room_usernum_container = (LinearLayout)rootView.findViewById(R.id.room_usernum_container);
+        room_usernum_container = (LinearLayout) rootView.findViewById(R.id.room_usernum_container);
         img_room_creator = (ImageView) rootView.findViewById(R.id.img_room_creator);
         center_sv = (ScrollView) rootView.findViewById(R.id.center_sv);
         center_sv.setOnTouchListener(this);
@@ -88,6 +100,51 @@ public class YKLiveFragment extends Fragment implements LayoutAdapter.OnRecycler
         live_send_gift.setOnClickListener(this);
         live_share.setOnClickListener(this);
         msg_send_bt.setOnClickListener(this);
+
+        //gift
+        giftLinear1 = (LinearLayout) rootView.findViewById(R.id.gift_linear1);
+        giftLinear1.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.gift_activity_open));
+        giftLinear2 = (LinearLayout) rootView.findViewById(R.id.gift_linear2);
+        giftLinear2.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.gift_activity_open));
+
+        final ImageView gift_png1 = (ImageView) rootView.findViewById(R.id.gift_png1);
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                giftLinear2.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.gift_close_close));
+                giftLinear2.setVisibility(View.INVISIBLE);
+
+                gift_png1.setVisibility(View.VISIBLE);
+                gift_png1.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.gift_png_show));
+            }
+        }, 2000);
+
+        final ImageView gift_num1 = (ImageView) rootView.findViewById(R.id.gift_num1);
+        final ImageView gift_num2 = (ImageView) rootView.findViewById(R.id.gift_num2);
+
+
+        mScaleSpring = mSpringSystem.createSpring().setSpringConfig(SpringConfig.fromOrigamiTensionAndFriction(86, 7)).addListener(new SimpleSpringListener() {
+            @Override
+            public void onSpringUpdate(Spring spring) {
+                float value = (float) spring.getCurrentValue();
+                float scale = 1f - value;
+                gift_num1.setScaleX(scale);
+                gift_num1.setScaleY(scale);
+                gift_num2.setScaleX(scale);
+            }
+        });
+
+//        while (true) {
+        mScaleSpring.setEndValue(1);
+        Handler handler1 = new Handler(Looper.getMainLooper());
+        handler1.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mScaleSpring.setEndValue(0);
+            }
+        }, 1000);
+//        }
     }
 
     private void initViewData() {
