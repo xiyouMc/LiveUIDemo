@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="48dp"
+                    android:orientation="horizontal">
+        <LinearLayout android:layout_width="48dp" android:layout_height="48dp">
+            <ImageView android:layout_height="match_parent" android:layout_width="30dp"
+                       android:src="@drawable/close"
+                       android:paddingLeft="10dp"/>
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                  android:text="充值"
+                  android:textSize="20sp"
+                  android:gravity="center"
+                  android:textColor="@color/black"
+                  android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+          android:background="#E9E9E9"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="70dp"
+                  android:orientation="horizontal"
+                  android:paddingLeft="15dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                  android:gravity="center"
+                  android:text="我的余额:"
+                  android:textSize="20sp"
+                  android:textColor="@color/black"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="match_parent"
+                   android:layout_marginLeft="10dp"
+                   android:src="@drawable/pay_icon_jb_nrm"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                  android:text="1000"
+                  android:textSize="21sp"
+                  android:gravity="center"/>
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="5dp"
+          android:background="#E9E9E9"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:paddingLeft="15dp">
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="70dp"
+                          android:orientation="horizontal">
+                <ImageView android:layout_width="wrap_content" android:layout_height="match_parent"
+                           android:src="@drawable/pay_icon_jb_nrm"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                          android:text="20"
+                          android:textColor="@color/black"
+                          android:textSize="21sp"
+                          android:gravity="center"
+                          android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="90dp" android:layout_height="40dp"
+                          android:orientation="horizontal"
+                          android:background="@color/gift_select_down"
+                          android:layout_alignParentRight="true"
+                          android:layout_centerVertical="true"
+                          android:layout_marginRight="10dp"
+            >
+                <ImageView android:layout_width="15dp"
+                           android:layout_height="15dp"
+                           android:src="@drawable/pay_icon_rmb_nrm"
+                           android:layout_gravity="center_vertical"
+                           android:layout_marginLeft="17dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:text="1.00"
+                          android:textSize="15sp"
+                          android:layout_marginLeft="5dp"
+                          android:textColor="@color/white"
+                />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+              android:background="#E9E9E9"/>
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="70dp"
+                          android:orientation="horizontal">
+                <ImageView android:layout_width="wrap_content" android:layout_height="match_parent"
+                           android:src="@drawable/pay_icon_jb_nrm"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                          android:text="100"
+                          android:textColor="@color/black"
+                          android:textSize="21sp"
+                          android:gravity="center"
+                          android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="90dp" android:layout_height="40dp"
+                          android:orientation="horizontal"
+                          android:background="@color/gift_select_down"
+                          android:layout_alignParentRight="true"
+                          android:layout_centerVertical="true"
+                          android:layout_marginRight="10dp"
+            >
+                <ImageView android:layout_width="15dp"
+                           android:layout_height="15dp"
+                           android:src="@drawable/pay_icon_rmb_nrm"
+                           android:layout_gravity="center_vertical"
+                           android:layout_marginLeft="17dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:text="1.00"
+                          android:textSize="15sp"
+                          android:layout_marginLeft="5dp"
+                          android:textColor="@color/white"
+                />
+            </LinearLayout>
+        </RelativeLayout>
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+              android:background="#E9E9E9"/>
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="70dp"
+                          android:orientation="horizontal">
+                <ImageView android:layout_width="wrap_content" android:layout_height="match_parent"
+                           android:src="@drawable/pay_icon_jb_nrm"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                          android:text="1000"
+                          android:textColor="@color/black"
+                          android:textSize="21sp"
+                          android:gravity="center"
+                          android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="90dp" android:layout_height="40dp"
+                          android:orientation="horizontal"
+                          android:background="@color/gift_select_down"
+                          android:layout_alignParentRight="true"
+                          android:layout_centerVertical="true"
+                          android:layout_marginRight="10dp"
+            >
+                <ImageView android:layout_width="15dp"
+                           android:layout_height="15dp"
+                           android:src="@drawable/pay_icon_rmb_nrm"
+                           android:layout_gravity="center_vertical"
+                           android:layout_marginLeft="17dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:text="1.00"
+                          android:textSize="15sp"
+                          android:layout_marginLeft="5dp"
+                          android:textColor="@color/white"
+                />
+            </LinearLayout>
+        </RelativeLayout>
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+              android:background="#E9E9E9"/>
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="70dp"
+                          android:orientation="horizontal">
+                <ImageView android:layout_width="wrap_content" android:layout_height="match_parent"
+                           android:src="@drawable/pay_icon_jb_nrm"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                          android:text="100000"
+                          android:textColor="@color/black"
+                          android:textSize="21sp"
+                          android:gravity="center"
+                          android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="90dp" android:layout_height="40dp"
+                          android:orientation="horizontal"
+                          android:background="@color/gift_select_down"
+                          android:layout_alignParentRight="true"
+                          android:layout_centerVertical="true"
+                          android:layout_marginRight="10dp"
+                          android:id="@+id/pay4"
+            >
+                <ImageView android:layout_width="15dp"
+                           android:layout_height="15dp"
+                           android:src="@drawable/pay_icon_rmb_nrm"
+                           android:layout_gravity="center_vertical"
+                           android:layout_marginLeft="17dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:text="1.00"
+                          android:textSize="15sp"
+                          android:layout_marginLeft="5dp"
+                          android:textColor="@color/white"
+                />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

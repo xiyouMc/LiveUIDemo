@@ -39,15 +39,32 @@
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="直播动画"
             android:layout_below="@id/viewpage_btn"/>
-    <top.codemc.liveappuidemo.view.likeanimationlayout.LikeAnimationLayout
-            android:id="@+id/like"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-    </top.codemc.liveappuidemo.view.likeanimationlayout.LikeAnimationLayout>
+    <Button android:id="@+id/charge"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="充值"
+            android:layout_below="@id/live_anim"/>
+    <Button android:id="@+id/activity_time_count_down"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="倒计时"
+            android:layout_below="@id/charge"/>
+    <Button android:id="@+id/heart_btn"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="心形动画"
+            android:layout_below="@id/live_anim"/>
     <EditText android:layout_width="match_parent" android:layout_height="100dp"
               android:layout_below="@id/live_over"
               android:hint="aaa"
               android:layout_alignParentBottom="true"
     />
+    <TextView android:id="@+id/test_text"
+              android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="x1234567890"
+              android:layout_alignParentRight="true"
+              android:textSize="25sp"/>
+
+    <com.vivavideo.mobile.commonui.HoloCircularProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"/>
 </RelativeLayout>

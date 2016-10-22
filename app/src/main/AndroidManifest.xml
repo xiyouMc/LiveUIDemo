@@ -36,6 +36,18 @@
                 android:label="@string/title_activity_view_page">
         </activity>
         <activity android:name="com.example.animation.MainActivity"/>
+        <activity
+                android:name=".ChargeActivity"
+                android:label="@string/title_activity_charge">
+        </activity>
+        <activity
+                android:name=".TimeCountDown"
+                android:label="@string/title_activity_time_count_down">
+        </activity>
+        <activity
+                android:name=".HeartActivity"
+                android:label="@string/title_activity_heart">
+        </activity>
     </application>
 
 </manifest>

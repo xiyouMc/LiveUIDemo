@@ -4,4 +4,7 @@
     <string name="title_activity_gird_view">GirdViewActivity</string>
     <string name="title_activity_close_live">CloseLiveActivity</string>
     <string name="title_activity_view_page">ViewPageActivity</string>
+    <string name="title_activity_charge">ChargeActivity</string>
+    <string name="title_activity_time_count_down">TimeCountDown</string>
+    <string name="title_activity_heart">HeartActivity</string>
 </resources>
