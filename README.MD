@@ -1,7 +1,7 @@
 
 # LiveAppUIDemo
 Live App UI Demo
-
+包括了创建直播、观看直播、展示个人信息、打开礼物列表、直播结束、ViewPage、直播动画、心形动画、倒计时等 
 
 ##Usage
 
