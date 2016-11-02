@@ -1,6 +1,5 @@
 package top.codemc.liveappuidemo;
 
-import com.facebook.rebound.BaseSpringSystem;
 import com.facebook.rebound.SimpleSpringListener;
 import com.facebook.rebound.Spring;
 import com.facebook.rebound.SpringConfig;
@@ -16,10 +15,6 @@ import android.widget.TextView;
 public class TimeCountDown extends ActionBarActivity {
 
     private TextView timeCountDown;
-    private final BaseSpringSystem mSpringSystem = SpringSystem.create();
-    private Spring timeScaleSpring;
-
-    private CountDownTimer mCountDownTimer;
     private int time;
 
     @Override
@@ -29,7 +24,7 @@ public class TimeCountDown extends ActionBarActivity {
         time = 10;
         timeCountDown = (TextView) findViewById(R.id.time);
         timeCountDown.setText(time + "");
-        timeScaleSpring = mSpringSystem.createSpring().setSpringConfig(SpringConfig.fromOrigamiTensionAndFriction(10, 7)).addListener(new SimpleSpringListener() {
+        final Spring timeScaleSpring = SpringSystem.create().createSpring().setSpringConfig(SpringConfig.fromOrigamiTensionAndFriction(10, 7)).addListener(new SimpleSpringListener() {
             @Override
             public void onSpringUpdate(Spring spring) {
                 float value = (float) spring.getCurrentValue();
@@ -38,7 +33,7 @@ public class TimeCountDown extends ActionBarActivity {
                 timeCountDown.setScaleY(scale);
             }
         });
-        mCountDownTimer = new CountDownTimer(10000, 1000) {
+        new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 time -= 1;
@@ -59,8 +54,7 @@ public class TimeCountDown extends ActionBarActivity {
             public void onFinish() {
 
             }
-        };
-        mCountDownTimer.start();
+        }.start();
     }
 
 }
