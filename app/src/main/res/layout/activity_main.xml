@@ -51,17 +51,27 @@
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="心形动画"
             android:layout_below="@id/live_anim"/>
-    <EditText android:layout_width="match_parent" android:layout_height="100dp"
-              android:layout_below="@id/live_over"
-              android:hint="aaa"
-              android:layout_alignParentBottom="true"
-    />
+    <!--<EditText android:layout_width="match_parent" android:layout_height="100dp"-->
+              <!--android:layout_below="@id/live_over"-->
+              <!--android:hint="aaa"-->
+              <!--android:layout_alignParentBottom="true"-->
+    <!--/>-->
     <TextView android:id="@+id/test_text"
               android:layout_width="wrap_content" android:layout_height="wrap_content"
               android:text="x1234567890"
               android:layout_alignParentRight="true"
               android:textSize="25sp"/>
 
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:id="@+id/btnAddDanmu"
+    android:layout_below="@id/activity_time_count_down"
+    android:text="addDanmu"/>
+    <master.flame.danmaku.ui.widget.DanmakuView
+            android:id="@+id/danmakuView"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:layout_below="@id/btnAddDanmu"/>
     <com.vivavideo.mobile.commonui.HoloCircularProgressBar
             android:id="@+id/progressBar"
             android:layout_width="80dp"

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LiveAppUIDemo.iml" filepath="$PROJECT_DIR$/LiveAppUIDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/danmu/danmu.iml" filepath="$PROJECT_DIR$/danmu/danmu.iml" />
     </modules>
   </component>
 </project>

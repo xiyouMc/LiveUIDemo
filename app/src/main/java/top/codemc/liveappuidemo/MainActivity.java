@@ -2,6 +2,8 @@ package top.codemc.liveappuidemo;
 
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.vivavideo.mobile.commonui.HoloCircularProgressBar;
+import com.vivavideo.mobile.danmu.danmu.DanmuControl;
+import com.vivavideo.mobile.danmu.model.Danmu;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,10 +11,19 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.TextPaint;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import master.flame.danmaku.controller.IDanmakuView;
+import master.flame.danmaku.danmaku.model.BaseDanmaku;
+import master.flame.danmaku.danmaku.model.IDanmakus;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -21,6 +32,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private HoloCircularProgressBar mHoloCircularProgressBar;
     private ObjectAnimator mProgressBarAnimator;
     public static final int TIME_RANGE = 30;
+
+    private IDanmakuView mDanmakuView;
+    private DanmuControl mDanmuControl;
+
+    private Button btnAddDanmu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,6 +147,50 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(intent);
             }
         });
+
+        danmu();
+    }
+
+    private void danmu(){
+        mDanmuControl = new DanmuControl(this);
+        mDanmakuView = (IDanmakuView) findViewById(R.id.danmakuView);
+        mDanmakuView.setOnDanmakuClickListener(new IDanmakuView.OnDanmakuClickListener() {
+            @Override
+            public void onDanmakuClick(BaseDanmaku latest) {
+                Log.d("Main","onDanmakuClick:" + latest.userHash);
+            }
+
+            @Override
+            public void onDanmakuClick(IDanmakus danmakus) {
+                Log.d("Main","onDanmakuClick:" + danmakus.toString());
+            }
+        });
+        btnAddDanmu = (Button) findViewById(R.id.btnAddDanmu);
+        mDanmuControl.setDanmakuView(mDanmakuView);
+        btnAddDanmu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setData();
+            }
+        });
+    }
+//
+    private void setData() {
+        List<Danmu> danmus = new ArrayList<>();
+        Danmu danmu1 = new Danmu(0, 1, "Like", R.drawable.ic_default_header, "");
+        Danmu danmu2 = new Danmu(0, 2, "Comment", R.drawable.ic_default_header, "这是一条弹幕啦啦啦");
+        Danmu danmu3 = new Danmu(0, 3, "Like", R.drawable.ic_default_header, "");
+        Danmu danmu4 = new Danmu(0, 1, "Comment", R.drawable.wat, "这又是一条弹幕啦啦啦");
+        Danmu danmu5 = new Danmu(0, 2, "Like", R.drawable.wat, "");
+        Danmu danmu6 = new Danmu(0, 3, "Comment", R.drawable.wat, "这还是一条弹幕啦啦啦");
+        danmus.add(danmu1);
+        danmus.add(danmu2);
+        danmus.add(danmu3);
+        danmus.add(danmu4);
+        danmus.add(danmu5);
+        danmus.add(danmu6);
+        Collections.shuffle(danmus);
+        mDanmuControl.addDanmuList(danmus);
     }
 
     @Override
@@ -144,4 +204,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
         this.startActivity(intent);
         this.overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
     }
+
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        mDanmuControl.pause();
+//    }
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        mDanmuControl.resume();
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        mDanmuControl.destroy();
+//    }
 }
+
